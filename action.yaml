@@ -1,0 +1,17 @@
+# action.yaml
+name: 'Action Black'
+description: 'Run black against python repo'
+inputs:
+  path:
+    description: 'Path to run black on.'
+    required: false
+    default: '.'
+outputs:
+  output:
+    description: 'Black output'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
